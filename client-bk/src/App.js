@@ -9,16 +9,15 @@ import Signin from './Pages/Signin';
 import RegisterClicks from './Pages/RegisterClicks';
 import PostsRender from './Pages/PostsRender';
 import CreatePost from './Pages/CreatePost';
-import SinglePost from './Pages/SinglePost';
+import TransportMode from './Pages/TransportMode';
 
 function App() {
   return (
     <div >
-      <Router>
-        
+      <Router>        
         <nav className="navbar navbar-expand-sm navbar-dark bg-dark mb-4">
           <div className="container-fluid">
-              <a className="navbar-brand" href="/">My App</a>
+              <a className="navbar-brand" href="/">Naija Logistics</a>
               <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
               <span className="navbar-toggler-icon"></span>
               </button>
@@ -32,11 +31,11 @@ function App() {
                   <Link className="nav-link" to="/vote">Vote</Link>
                   </li>
                   <li>
-                    <Link className="nav-link" to="/createPost">Create A Post</Link>
+                    <Link className="nav-link" to="/sendMessage">Send Message</Link>
                   </li>
                   <li className="nav-item">
-                  <Link className="nav-link" to="/posts" tabIndex="-1">
-                    Blog</Link>
+                  <Link className="nav-link" to="/choose-shipping" tabIndex="-1">
+                    Freight</Link>
                   </li>
                   
               </ul>
@@ -51,8 +50,8 @@ function App() {
           <Route path="/" exact component={Signin} />
           <Route path="/vote" exact component={RegisterClicks} />
           <Route path="/posts" exact component={PostsRender}/>
-          <Route path="/createPost" exact component={CreatePost}/>
-          <Route path="/single-post/:id" exact component={SinglePost}/>
+          <Route path="/sendMessage" exact component={CreatePost}/>
+          <Route path="/choose-shipping" exact component={TransportMode}/>
 
         </Switch>
       </Router>      

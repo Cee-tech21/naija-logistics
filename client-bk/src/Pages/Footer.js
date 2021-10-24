@@ -14,7 +14,7 @@ function Footer() {
                         <li class="nav-item mb-2 mx-2">
                             <a href="#" class="nav-link p-0 text-muted">FAQs</a></li>
                         <li class="nav-item mb-2 mx-2">
-                            <a href="#" class="nav-link p-0 text-muted">About</a></li>
+                            <a href="#" class="nav-link p-0 text-muted">Contact</a></li>
                         </ul>
                     </div>             
                 

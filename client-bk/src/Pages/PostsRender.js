@@ -9,6 +9,10 @@ function PostsRender() {
 
     const [listOfPosts, setListOfPosts] = useState([]);
     const imgPath = "bear.jpg";
+    const routeChange = () =>{
+        let path = `/single-post/id`;
+        singlePost.push(path);
+    }
     
 
     useEffect(() => {
@@ -27,6 +31,7 @@ function PostsRender() {
                             mb-4 shadow-sm h-md-250 position-relative" 
                             >
                             <div class="col p-4 d-flex flex-column position-static"
+                                
                                 // onClick={singlePost.push(`/single-post/${value.username}`)}
                                 >
                                 <h3 class="mb-0">{value.title}</h3>
@@ -34,8 +39,8 @@ function PostsRender() {
                                     Nov 11 | {value.username} </div>
                                 <p class="mb-auto">
                                     {value.postText}.</p>
-                                <a href=""
-                                    // class="stretched-link"
+                                <a href={`/single-post/${value.id}`}
+                                    class="stretched-link"
                                 >
                                     Continue reading</a>
                             </div>

@@ -10,12 +10,12 @@ function CreatePost() {
     const initialValues = {
         title: "",
         postText: "",
-        username: "",
+        email: "",
     }
     const validationSchema = Yup.object().shape({
         title: Yup.string().required(),
         postText: Yup.string().required(),
-        username: Yup.string().min(4).max(15).required(),
+        email: Yup.string().min(4).max(15).required(),
     })
     const onSubmit = (data) => {
         axios.post("http://localhost:3002/posts", data).then((response) => {
@@ -31,7 +31,7 @@ function CreatePost() {
             <Formik initialValues={initialValues} onSubmit={onSubmit}
                     validationSchema={validationSchema}>
                 <Form>
-                    <h3 class="mb-3 fw-normal">Create a post</h3>              
+                    <h3 class="mb-3 fw-normal">Send a message</h3>              
                     <div class="form-floating">
                     <Field name="title" type="text" class="form-control"                     
                         placeholder="Example title..."
@@ -44,30 +44,25 @@ function CreatePost() {
                     <Field name="postText" type="text" class="form-control"                     
                         placeholder="Example title..."
                         />
-                    <label for="floatingInput">Enter post</label>
+                    <label for="floatingInput">Enter message</label>
                     <ErrorMessage name="postText" component="span" 
                             className="text-warning"/>
                     </div>
 
                     <div class="form-floating">
-                    <Field name="username" type="text" class="form-control"                     
+                    <Field name="email" type="text" class="form-control"                     
                         placeholder="Example title..."
                         />
-                    <label for="floatingInput">Enter username</label>
-                    <ErrorMessage name="username" component="span" 
+                    <label for="floatingInput">Enter email address</label>
+                    <ErrorMessage name="email" component="span" 
                             className="text-warning"/>
                     </div>                                   
 
-                    <div class="checkbox mb-3 mt-3">
-                    <label >
-                        <input class="mx-2" type="checkbox" value="remember-me"/> 
-                            Remember me
-                    </label>
-                    </div>
+                    
                     <button class="w-100 btn btn-lg btn-secondary" 
                             type="submit"                        
                             >
-                                Create post</button>
+                                Send message</button>
                 </Form>
             </Formik>
         </main>
